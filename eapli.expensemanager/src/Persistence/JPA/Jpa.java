@@ -33,14 +33,12 @@ public abstract class Jpa<T, PK extends Serializable> {
         this.entityClass = (Class<T>) genericSuperclass.getActualTypeArguments()[0];
     }
     
-    @Override
-    public T create(T t) {
+        public T create(T t) {
         this.entityManager.persist(t);
         return t;
     }
 
-    @Override
-    public T read(PK id) {
+        public T read(PK id) {
        return this.entityManager.find(entityClass, id);
     }
     
@@ -48,13 +46,11 @@ public abstract class Jpa<T, PK extends Serializable> {
         return read(id);
     }
 
-    @Override
-    public T update(T t) {
+        public T update(T t) {
         return this.entityManager.merge(t);
     }
 
-    @Override
-    public void delete(T t) {
+        public void delete(T t) {
        t = this.entityManager.merge(t);
        this.entityManager.remove(t);
     }
