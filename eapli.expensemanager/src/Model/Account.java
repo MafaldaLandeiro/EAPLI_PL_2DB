@@ -5,7 +5,6 @@
 package Model;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,9 +20,13 @@ public class Account {
     
    
     List<Income> listIncome;
+    private Iterable<Expense> listExpense;
    
   
-    Account(){
+    /**
+     *
+     */
+    public Account(){
         
         
        
